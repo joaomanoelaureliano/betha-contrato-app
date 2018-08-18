@@ -1,0 +1,135 @@
+
+<div class="container">
+  <div class="pricing-header px-1 py-1 pt-md-2 pb-md-3 mx-auto text-center">
+    <h3 class="display-5">CADASTRO DE CONTRATO</h3>
+  </div>
+  
+  <form>
+    <br>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="documento">Nº Contrato</label>
+        <input type="text" required ng-class="{'is-invalid': vm.error.documento}" ng-model="vm.registro.documento" class="form-control" id="documento" placeholder="Número do contrato">
+         <small ng-if="vm.error.documento" class="invalid-feedback">
+            {{vm.error.documento[1]}}
+        </small>
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="fornecedor">Fornecedor</label>
+        <input type="text" required ng-class="{'is-invalid': vm.error.fornecedor}" ng-model="vm.registro.fornecedor" class="form-control" id="fornecedor" placeholder="Nome do fornecedor">
+        <small ng-if="vm.error.fornecedor" class="invalid-feedback">
+            {{vm.error.fornecedor[1]}}
+        </small>
+      </div>
+
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="servico">Tipo do serviço</label>
+        <input type="text" required ng-class="{'is-invalid': vm.error.servico}" ng-model="vm.registro.servico" class="form-control" id="servico" placeholder="Tipo do serviço prestado pelo fornecedor">
+        <small ng-if="vm.error.servico" class="invalid-feedback">
+            {{vm.error.servico[1]}}
+        </small>
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="unidade">Selecione a unidade</label>
+        <select requeride ng-class="{'is-invalid': vm.error.unidade}" ng-model="vm.registro.unidade" class="form-control" id="unidade">
+        <small ng-if="vm.error.unidade" class="invalid-feedback">
+            {{vm.error.unidade[1]}}
+        </small>
+          <option></option>
+          <option>Matriz</option>
+          <option>Desenvolvimento</option>
+          <option>Filial Criciúma</option>
+          <option>Filial Palhoça</option>
+          <option>Filial Rio do Sul</option>
+          <option>Filial Chapecó</option>
+          <option>Filial Curitiba</option>
+          <option>Filial Caxias do Sul</option>
+          <option>Filial Uberlândia</option>
+          <option>Todas</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="diretoria">Diretoria</label>
+        <input type="text" required ng-class="{'is-invalid': vm.error.diretoria}" ng-model="vm.registro.diretoria" class="form-control" id="diretoria" placeholder="Diretoria responsável">
+        <small ng-if="vm.error.diretoria" class="invalid-feedback">
+            {{vm.error.diretoria[1]}}
+        </small>
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="email">E-mail</label>
+        <input type="text" required  ng-class="{'is-invalid': vm.error.email}" ng-model="vm.registro.email" class="form-control" id="email" placeholder="nome@exemplo.com">
+        <small ng-if="vm.error.email" class="invalid-feedback">
+            {{vm.error.email[1]}}
+        </small>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="indice">Índice de reajuste</label>
+        <input type="text" required  ng-class="{'is-invalid': vm.error.email}" ng-model="vm.registro.indice" class="form-control" id="indice" placeholder="Índice para reajuste de contrato">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="reajuste">Mês de reajuste</label>
+        <select required ng-class="{'is-invalid': vm.error.reajuste}"  ng-model="vm.registro.reajuste" class="form-control" id="reajuste">
+        <small ng-if="vm.error.reajuste" class="invalid-feedback">
+            {{vm.error.reajuste[1]}}
+        </small>
+          <option></option>
+          <option>Janeiro</option>
+          <option>Fevereiro</option>
+          <option>Março</option>
+          <option>Abril</option>
+          <option>Maio</option>
+          <option>Junho</option>
+          <option>Julho</option>
+          <option>Agosto</option>
+          <option>Setembro</option>
+          <option>Outubro</option>
+          <option>Novembro</option>
+          <option>Dezembro</option>
+          <option>Sem reajuste</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+     <div class="form-group col-md-6">
+      <label for="dt_inicio">Data ínicio</label>
+      <input type="text" required ng-class="{'is-invalid': vm.error.dt_inicio}" ng-model="vm.registro.dt_inicio" class="form-control" id="dt_inicio" placeholder="Data ínicio do contrato">
+        <small ng-if="vm.error.dt_inicio" class="invalid-feedback">
+            {{vm.registro.dt_inicio | date:'dd/MM/yyyy HH:mm'}}
+        </small>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="dt_final">Data Final</label>
+      <input type="text" ng-class="{'is-invalid': vm.error.dt_final}" required ng-model="vm.registro.dt_final"  class="form-control" id="dt_final" placeholder="Data final do contrato">
+        <small ng-if="vm.error.dt_final" class="invalid-feedback">
+            {{vm.registro.dt_final | date:'dd/MM/yyyy HH:mm'}}
+        </small>
+    </div>
+  </div> 
+  <div class="form-row">
+   <div class="form-group col-md-12">
+    <label for="link">Link do Contrato</label>
+    <input type="text" required ng-model="vm.registro.link" class="form-control" id="link" placeholder="Link para visualização do contrato">
+    </div>    
+   
+  <div class="form-row">
+   <div class="form-group col-md-12">
+    <label for="observacoes">Observações</label>
+    <input type="text" required ng-model="vm.registro.observacoes" class="form-control" id="observacoes" placeholder="Observações necessárias">
+    <br>
+    <button type="button" ng-click="vm.salvar()" class="sucess-btn">Salvar</button>  
+    <br><br><br><br><br>
+    </form>
+  </div>    

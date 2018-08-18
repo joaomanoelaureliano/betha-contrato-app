@@ -1,0 +1,31 @@
+<nav id="nav" class="navbar" ng-controller="NavbarSistemaController"></nav>
+        <div class="container">
+
+            <div class="navbar-header">
+                <div class="navbar-brand">
+                    <a href="">
+                        <br>
+                        <h5>Contratos Web<h5>
+                    </a>
+                </div>
+                <div class="nav-collapse">
+                    <span></span>
+                </div>
+            </div>
+
+            <ul class="main-nav nav navbar-nav navbar-right">
+                <li><a href ui-sref="home">Início</a></li>
+
+                <li class="has-dropdown"><a href="">Cadastros</a>
+                    <ul class="dropdown">
+                        <li><a href ui-sref="sistema.cadastroContratos">Contratos</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown"><a href="">Relatórios de contratos</a>
+                    <ul class="dropdown">
+                        <li><a href ui-sref="sistema.relatorioTodos">Todos</a></li>
+                    </ul>
+                </li>
+              </ul>
+        </div>
+    </nav>
